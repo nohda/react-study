@@ -1,14 +1,28 @@
-import React, { Component } from 'react';
-import TodoListTemplate from './components/TodoListTemplate';
+import React from 'react';
+import { createGlobalStyle } from 'styled-components';
+import TodoHead from './components/TodoHead';
+import TodoTemplate from './components/TodoTemplate';
+import TodoList from './components/TodoList';
+import TodoCreate from './components/TodoCreate';
 
-class App extends Component {
-  render() {
-    return (
-      <TodoListTemplate>
-        템플릿 완성
-      </TodoListTemplate>
-    );
+const GlobalStyle = createGlobalStyle`
+  body {
+    background: #e9ecef;
   }
+`;
+
+function App() {
+  return (
+    <>
+      <GlobalStyle />
+      <TodoTemplate>
+        <TodoHead />
+        <TodoList />
+        <TodoCreate />
+      </TodoTemplate>
+
+    </>
+  );
 }
 
 export default App;
